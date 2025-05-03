@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "verbose": false,
+  "watch": [
+    "src/"
+  ],
+  "ignore": [],
+  "delay": "50",
+  "exec": "node --experimental-strip-types src/index.ts",
+  "ext": "ts"
+}
