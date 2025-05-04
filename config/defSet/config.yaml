@@ -1,1 +1,3 @@
-
+server:
+  tcp:
+    port: 1288

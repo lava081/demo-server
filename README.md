@@ -34,7 +34,9 @@ pnpm i -D
 
 ### nodejs v22.6.0+ 
 
-使用`Nodemon`调试器，或者手动运行
+~~~ 使用`Nodemon`调试器，或者手动运行 ~~~
+
+当存在内部导入导出时，需要显式指示拓展名为.js，会导致nodejs无法正常导入.ts，所以这个特性还是等nodejs v24的时候再看看吧。
 
 ```sh 
 node --experimental-strip-types src/index.ts
