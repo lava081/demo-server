@@ -46,11 +46,26 @@ node --experimental-strip-types src/index.ts
 
 先编译
 
+```sh
+pnpm tsc
+```
+
 再使用`node`调试器，或者手动执行
 
 ```sh
 node .
 ```
+
+#### 新的建议
+
+`运行和调试` -> 单击下拉框 -> `运行脚本: dev`
+
+或者手动运行
+
+```sh
+pnpm dev
+```
+
 
 ### node v23+
 
@@ -82,7 +97,7 @@ pnpm tsc
 
 假设你已经顺利得到编译结果
 
-将`config/default/`文件夹的内容拷贝到`config/config/`
+拷贝文件`lib/`, `config/default/`, `data/default/`, `package.json`, `LICENSE`到生产环境
 
 安装生产依赖，运行index.js
 
