@@ -65,11 +65,10 @@ class ConfigManager {
    * @param key 配置项的键，支持点号分隔的路径
    * @returns 配置项的值
    */
-  public get<T extends string>(
-    key: T,
-  ): GetNestedValue<Config, T> {
+  public get<T extends string>(key: T): GetNestedValue<Config, T> {
     const keys = key.split('.')
-    if (keys.every((key) => key === '')) return this.config as GetNestedValue<Config, T>
+    if (keys.every((key) => key === ''))
+      return this.config as GetNestedValue<Config, T>
     let result: GetNestedValue<Config, T> | Config = this.config
 
     for (const k of keys as (keyof Config)[]) {
@@ -130,8 +129,7 @@ class ConfigManager {
     }
 
     // 别骂我，我是真的没办法了
-    ;(obj[lastKey as keyof Config] as GetNestedValue<Config, T>) =
-      value
+    ;(obj[lastKey as keyof Config] as GetNestedValue<Config, T>) = value
 
     this.saveConfig()
     this.notifyListeners()
@@ -146,18 +144,18 @@ class ConfigManager {
     }
   }
 
-  private listeners: ((config: Config) => void)[] = []
+  private listeners: ((config: Config) => Promise<void>)[] = []
 
   /**
    * 注册配置变更监听器
    * @param listener 监听器函数，接收当前配置作为参数
    */
-  public onConfigChange(listener: (config: Config) => void) {
+  public onConfigChange(listener: (config: Config) => Promise<void>) {
     this.listeners.push(listener)
   }
 
   private notifyListeners() {
-    this.listeners.forEach((listener) => listener(this.config))
+    this.listeners.forEach((listener) => void listener(this.config))
   }
 }
 

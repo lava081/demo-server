@@ -10,7 +10,7 @@
     "prettier": "prettier --check \"src/**/*.ts\"",
     "prettier:fix": "prettier --write \"src/**/*.ts\"",
     "clean": "rimraf lib/",
-    "dev": "nodemon --config nodemon.json",
+    "dev": "pnpm build && node .",
     "build": "tsc"
   },
   "keywords": [],
@@ -24,7 +24,6 @@
     "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
-    "chokidar": "^4.0.3",
     "copyfiles": "^2.4.1",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
@@ -36,8 +35,7 @@
     "rimraf": "^6.0.1",
     "tsc-alias": "^1.8.15",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.1",
-    "yaml": "^2.7.1"
+    "typescript-eslint": "^8.31.1"
   },
   "dependencies": {
     "chokidar": "^4.0.3",

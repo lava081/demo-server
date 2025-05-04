@@ -25,7 +25,7 @@ set NPM_CONFIG_PACKAGE_MANAGER=pnpm
 ## 安装开发依赖
 
 ```sh
-pnpm i -D
+pnpm i
 ```
 
 ## 调试
@@ -73,7 +73,7 @@ pnpm run build
 或者
 
 ```
-tsc
+pnpm tsc
 ```
 
 编译结果在`lib/`文件夹
