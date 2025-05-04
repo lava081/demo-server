@@ -82,7 +82,7 @@ pnpm tsc
 
 假设你已经顺利得到编译结果
 
-将`config/defSet/`文件夹的内容拷贝到`config/config/`
+将`config/default/`文件夹的内容拷贝到`config/config/`
 
 安装生产依赖，运行index.js
 

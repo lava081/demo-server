@@ -28,7 +28,7 @@ class ConfigManager {
 
   constructor(configPath: string) {
     this.configPath = configPath
-    this.defSetPath = configPath.replace('config/config/', 'config/defSet/')
+    this.defSetPath = configPath.replace('config/config/', 'config/default/')
     this.config = this.loadConfig()
     this.watcher = this.startWatching()
   }
