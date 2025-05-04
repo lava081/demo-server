@@ -1,9 +1,6 @@
-import yaml from 'yaml'
-import fs from 'fs'
+import config from './tool/config.js'
 
 console.log('Hello, World!')
-fs.readFile('./config/config/config.yaml', 'utf-8', (err, data) => {
-  console.log(yaml.parse(data))
-})
-
-process.stdin.resume() // 保持进程运行
+console.log(config.get('server.tcp.port')) // 获取配置项port的值
+const defSet = config.get('') // 获取所有配置项，初次启动时为defSet的值
+config.set('server.tcp', defSet.server.tcp) // 设置配置项tcp的值为{ port: number; }

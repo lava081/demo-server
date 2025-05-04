@@ -9,8 +9,9 @@
     "lint:fix": "eslint --ext .ts src --fix",
     "prettier": "prettier --check \"src/**/*.ts\"",
     "prettier:fix": "prettier --write \"src/**/*.ts\"",
+    "clean": "rimraf lib/",
     "dev": "nodemon --config nodemon.json",
-    "build": "tsc && tsc-alias"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "lava081",
@@ -20,8 +21,11 @@
     "@eslint/create-config": "^1.8.1",
     "@eslint/js": "^9.25.1",
     "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
+    "chokidar": "^4.0.3",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
@@ -29,12 +33,14 @@
     "globals": "^16.0.0",
     "nodemon": "^3.1.10",
     "prettier": "3.5.3",
+    "rimraf": "^6.0.1",
     "tsc-alias": "^1.8.15",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1",
     "yaml": "^2.7.1"
   },
   "dependencies": {
+    "chokidar": "^4.0.3",
     "yaml": "^2.7.1"
   }
 }
